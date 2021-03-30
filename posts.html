@@ -6,7 +6,7 @@
   </head>
   <body>
 <h1>2016 posts copied from my octopress blog</h1>
-<h3>Setting up your malware test environment correctly is very important. This is my 2 cents on the matter.</h3>
+<br>
 <div class="entry-content"><p>Setting up your malware test environment correctly is very important. This is my 2 cents on the matter.</p>
 
 <p>There are 2 main options in my opinion: <br/>
@@ -26,7 +26,7 @@
 
 <p>Ensure the VM is isolated BUT you can connect to the Web when needed. Point 3 - easily managable!</p>
 
-<h2>Tools</h2>
+<h4>Tools</h4>
 
 <p>System  <br/>
 •<a href="http://technet.microsoft.com/en-us/">Sysinternals Suite</a></p>
@@ -63,6 +63,92 @@
 •Skill and patience! Comes with time.</p>
 
 <p>Take a snapshot when finished and you&rsquo;re golden. Next we&rsquo;ll discuss Static vs Dynamic Analysis. All good analysts should at a minimum be able to perform Static Analysis! Fullstop.</p>
+</div>
+<br>
+
+
+  <div class="entry-content"><p>PDF files - one of the most popular file formats!</p>
+
+<p>PDF stands for Portable Data Format. They contain all the graphics, fonts and text for a document, as well as the logic information to display them. The most common PDF reader is Adobe AcrobatReader.</p>
+
+<p>An interesting fact for you next pub outing - PDF readers are the second most popular software in the world. Can you guess what number one is? Attackers know that PDF reader software is installed on a potential victims machine. But they wouldn&rsquo;t try exploit this would they&hellip;.
+Attackers sending malicious PDF documents is common, very very common infact. So being in InfoSec you should at least know the basics, and not soley rely on your sandbox(s) x 10.</p>
+
+<p>Exploits for PDFs are very popular - check out <a href="https://www.google.ie/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=6&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwi1jIeK5YLOAhVkCMAKHSV-D7cQFggyMAU&amp;url=http%3A%2F%2Fkrebsonsecurity.com%2Ftag%2Fcrimepack%2F&amp;usg=AFQjCNFsaRUryd1kQ1O59aN9O3e4gbMHuA">Crimepack</a></p>
+
+<p>A deeper look at the format can be found at <a href="http://blog.didierstevens.com/2008/04/09/quickpost-about-thephysical-and-logical-structure-of-pdf-files/">Didier Stevens Blog</a></p>
+
+<p>For now lets get to work. We&rsquo;ll be using two tools PDF-ID and PDF-Parser. Both written by <a href="http://blog.didierstevens.com/programs/pdf-tools/">Didier Stevens</a></p>
+
+<p>PDF-ID is not a pdf parser. It will scan through a PDF looking for PDF keywords and shows you how many times they appear in a file - helps to intially triage PDF documents.</p>
+
+<p>PDF-PARSER tool allows you to parse the physical and logical structure of a PDF file.</p>
+
+<p>EX1) Analysis of PDF2.pdf - a PDF with Hello World.</p>
+
+<p>Results of running PDF-ID on PDF2.pdf.
+<img src="/images/posts/pdfid1.png" width="5000" height="5000" title="PDFIF" ></p>
+
+<p>PDF-ID dentified it is a PDF from the header. 6 Object files are present in the file. Most PDF files will contain some binary data but this one has been designed to be pure ASCII. As you can see the code is easy to read and it describes a series of objects.</p>
+
+<p>Going further with PDF-Parser.
+Results of running PDF-parser on PDF2.pdf.
+<img src="/images/posts/pdfparser1.png" width="5000" height="5000" title="PDFparser" ></p>
+
+<p>To parse out individual objects in PDF files we run the following command:</p>
+
+<p>-o 5 to specify object 5.</p>
+
+<p>-c forces to show the contents</p>
+
+<p>And now it only takes the stream I want.</p>
+
+<p><img src="/images/posts/pdfparser1.1.png" width="5000" height="5000" title="PDFparser1.1" ></p>
+
+<p>But we get back binary data, rather than simple ASCII which we would expect right? This is because of this filter - FlateDecode. The filter is compressing the text using zlib compression, which is very common in normal PDF files. Reduce size PDF = Faster to download.</p>
+
+<p>Luckily PDF-PARSER has a flag to deal with this. Decoded compression.</p>
+
+<p><img src="/images/posts/pdfparser1.2.png" width="5000" height="5000" title="PDFparser1.2" ></p>
+
+<p>EX2) Analysis of java.pdf.
+PDFID output.
+<img src="/images/posts/java.png" width="5000" height="5000" title="Java" ></p>
+
+<p>Same as previous, still one page etc. However there is Javascript present. A user opening this PDF normally will not notice as you will see.</p>
+
+<p>Using the -s flag of PDF parser to figure out which object it is in.</p>
+
+<p><img src="/images/posts/java2.png" width="5000" height="5000" title="java2" ></p>
+
+<p>Javascript appears in Object 7. Search feature in PDF-PARSER is NOT case sensitive. /JS shows the actual JavaScript to run. The JS will use the app class which references the PDF document itself. It calls the alert method with some parameters. The title and the message parameters are set as well as the objects to use.</p>
+
+<p>As mentioned - if you open this the JavaScript it does not run. JavaScript is an event based language, something needs to trigger the JS to run. There is nothing in the PDF to &lsquo;tell&rsquo; it to run. Such as an OpenAction method.</p>
+
+<p>EX3) Another example involving a PE file.
+PDF-ID output.</p>
+
+<p><img src="/images/posts/exe.png" width="5000" height="5000" title="exe" ></p>
+
+<p>We have an embedded file 1 - i.e. a file embedded in the PDF. That embedded file is essentially added as an attachment. Searching for this reveals it is in Object 8.</p>
+
+<p><img src="/images/posts/exe3.png" width="5000" height="5000" title="exe3" ></p>
+
+<p>Using -d to dump the file.</p>
+
+<p><img src="/images/posts/exe4.png" width="5000" height="5000" title="exe4" ></p>
+
+<p><img src="/images/posts/exe5.png" width="5000" height="5000" title="exe5" ></p>
+
+<p>We can straight up run/sandbox at this stage. Or reverse if you know how. We&rsquo;ll be covering this later.</p>
+
+<p>Hope this was informative :).</p>
+
+<p>When time allows I&rsquo;ll post another analysis focusing on things like heap spray attacks and obfuscation.</p>
+
+<p>Check out <a href="http://www.joesecurity.org/joe-sandbox-complete">Joe Sandbox</a> and <a href="http://eternal-todo.com/tools/peepdf-pdf-analysis-tool">peepdf</a></p>
+
+<p>Edit: Joe&rsquo;s Sandbox used to be free!</p>
 </div>
   </body>
 </html>
