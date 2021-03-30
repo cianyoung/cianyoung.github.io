@@ -87,13 +87,13 @@ Attackers sending malicious PDF documents is common, very very common infact. So
 <p>EX1) Analysis of PDF2.pdf - a PDF with Hello World.</p>
 
 <p>Results of running PDF-ID on PDF2.pdf.
-<img src="/images/posts/pdfid1.png" width="5000" height="5000" title="PDFIF" ></p>
+<img src="/images/posts/pdfid1.png" width="150" height="150" title="PDFIF" ></p>
 
 <p>PDF-ID dentified it is a PDF from the header. 6 Object files are present in the file. Most PDF files will contain some binary data but this one has been designed to be pure ASCII. As you can see the code is easy to read and it describes a series of objects.</p>
 
 <p>Going further with PDF-Parser.
 Results of running PDF-parser on PDF2.pdf.
-<img src="/images/posts/pdfparser1.png" width="5000" height="5000" title="PDFparser" ></p>
+<img src="/images/posts/pdfparser1.png" width="150" height="150" title="PDFparser" ></p>
 
 <p>To parse out individual objects in PDF files we run the following command:</p>
 
@@ -103,23 +103,23 @@ Results of running PDF-parser on PDF2.pdf.
 
 <p>And now it only takes the stream I want.</p>
 
-<p><img src="/images/posts/pdfparser1.1.png" width="5000" height="5000" title="PDFparser1.1" ></p>
+<p><img src="/images/posts/pdfparser1.1.png" width="150" height="150" title="PDFparser1.1" ></p>
 
 <p>But we get back binary data, rather than simple ASCII which we would expect right? This is because of this filter - FlateDecode. The filter is compressing the text using zlib compression, which is very common in normal PDF files. Reduce size PDF = Faster to download.</p>
 
 <p>Luckily PDF-PARSER has a flag to deal with this. Decoded compression.</p>
 
-<p><img src="/images/posts/pdfparser1.2.png" width="5000" height="5000" title="PDFparser1.2" ></p>
+<p><img src="/images/posts/pdfparser1.2.png" width="150" height="150" title="PDFparser1.2" ></p>
 
 <p>EX2) Analysis of java.pdf.
 PDFID output.
-<img src="/images/posts/java.png" width="5000" height="5000" title="Java" ></p>
+<img src="/images/posts/java.png" width="150" height="150" title="Java" ></p>
 
 <p>Same as previous, still one page etc. However there is Javascript present. A user opening this PDF normally will not notice as you will see.</p>
 
 <p>Using the -s flag of PDF parser to figure out which object it is in.</p>
 
-<p><img src="/images/posts/java2.png" width="5000" height="5000" title="java2" ></p>
+<p><img src="/images/posts/java2.png" width="150" height="150" title="java2" ></p>
 
 <p>Javascript appears in Object 7. Search feature in PDF-PARSER is NOT case sensitive. /JS shows the actual JavaScript to run. The JS will use the app class which references the PDF document itself. It calls the alert method with some parameters. The title and the message parameters are set as well as the objects to use.</p>
 
@@ -128,17 +128,17 @@ PDFID output.
 <p>EX3) Another example involving a PE file.
 PDF-ID output.</p>
 
-<p><img src="/images/posts/exe.png" width="5000" height="5000" title="exe" ></p>
+<p><img src="/images/posts/exe.png" width="150" height="150" title="exe" ></p>
 
 <p>We have an embedded file 1 - i.e. a file embedded in the PDF. That embedded file is essentially added as an attachment. Searching for this reveals it is in Object 8.</p>
 
-<p><img src="/images/posts/exe3.png" width="5000" height="5000" title="exe3" ></p>
+<p><img src="/images/posts/exe3.png" width="150" height="150" title="exe3" ></p>
 
 <p>Using -d to dump the file.</p>
 
-<p><img src="/images/posts/exe4.png" width="5000" height="5000" title="exe4" ></p>
+<p><img src="/images/posts/exe4.png" width="150" height="150" title="exe4" ></p>
 
-<p><img src="/images/posts/exe5.png" width="5000" height="5000" title="exe5" ></p>
+<p><img src="/images/posts/exe5.png" width="150" height="150" title="exe5" ></p>
 
 <p>We can straight up run/sandbox at this stage. Or reverse if you know how. We&rsquo;ll be covering this later.</p>
 
