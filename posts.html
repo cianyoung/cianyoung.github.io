@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>posts</title>
+  </head>
+  <body>
+<h1>2016 posts copied from my octopress blog</h1>
+<h3>Setting up your malware test environment correctly is very important. This is my 2 cents on the matter.</h3>
+<div class="entry-content"><p>Setting up your malware test environment correctly is very important. This is my 2 cents on the matter.</p>
+
+<p>There are 2 main options in my opinion: <br/>
+1) A basic, portable lab.<br/>
+2) Fully professional lab.</p>
+
+<p>The essential components:<br/>
+1) Easily restorable. Definitely.
+2) Correct tools.<br/>
+3) Upgradable/Managable.<br/>
+4) Isolated!</p>
+
+<p>My setup (which I&rsquo;m going to use here) is what I would consider basic, say in comparsion to Fireeye&rsquo;s lab or perhaps the People&rsquo;s Liberation Army lab.</p>
+
+<p>Install a Windows 7 VM on a host. Personally I use VMWare. I find it solid.
+(Set the patch level of the machine to low).</p>
+
+<p>Ensure the VM is isolated BUT you can connect to the Web when needed. Point 3 - easily managable!</p>
+
+<h2>Tools</h2>
+
+<p>System  <br/>
+•<a href="http://technet.microsoft.com/en-us/">Sysinternals Suite</a></p>
+
+<p>Networking/Investigations  <br/>
+•<a href="www.wireshark.org">Wireshark</a><br/>
+•<a href="http://winscp.net">WinScp</a><br/>
+•<a href="http://joncraton.org">Netcat</a><br/>
+•<a href="http://www.mcafee.com">Fport</a> <br/>
+•<a href="http://gnuwin32.sourceforge.net">Wget</a><br/>
+•<a href="http://www.chiark.greened.org.uk">Putty</a></p>
+
+<p>Anti-Rootkit<br/>
+•<a href="www.trendmicro.com">RootkitBuster</a></p>
+
+<p>Static Analysis<br/>
+•<a href="http://md5deep.sourceforge.net">Md5deep</a> <br/>
+•<a href="htt://bob.droppages.com/Projects/PEiD">PeID</a> <br/>
+•<a href="http://smidgeonsoft.prohosting.com/pebrowse-pro-file-viewer.html">PE Browse</a><br/>
+•<a href="http://winitor.com">PE Studio</a></p>
+
+<p>Change Analysis<br/>
+•<a href="http://code.google.com/p/regshot">Regshot</a></p>
+
+<p>Web<br/>
+•<a href="http://getfirebug.com/">Firebug</a><br/>
+•<a href="http://noscript.net">NoScript</a></p>
+
+<p>Reverse Engineering Tools<br/>
+•<a href="http://www.hex-rays.com">IDA Pro</a><br/>
+•<a href="http://immunityinc.com">Ollydbg</a><br/>
+•<a href="http://www.hiew.ru">HiEW</a><br/>
+•<a href="https://code.google.com/p/volatility/">Volatility</a><br/>
+•Skill and patience! Comes with time.</p>
+
+<p>Take a snapshot when finished and you&rsquo;re golden. Next we&rsquo;ll discuss Static vs Dynamic Analysis. All good analysts should at a minimum be able to perform Static Analysis! Fullstop.</p>
+</div>
+  </body>
+</html>
