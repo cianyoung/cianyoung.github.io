@@ -1,154 +1,169 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>posts</title>
-  </head>
-  <body>
-<h1>2016 posts copied from my octopress blog</h1>
-<br>
-<div class="entry-content"><p>Setting up your malware test environment correctly is very important. This is my 2 cents on the matter.</p>
 
-<p>There are 2 main options in my opinion: <br/>
-1) A basic, portable lab.<br/>
-2) Fully professional lab.</p>
+<head>
+  <meta charset="utf-8">
+  <title>posts</title>
+</head>
 
-<p>The essential components:<br/>
-1) Easily restorable. Definitely.
-2) Correct tools.<br/>
-3) Upgradable/Managable.<br/>
-4) Isolated!</p>
+<body>
+  <h1>2016 posts copied from my octopress blog</h1>
+  <br>
+  <h3>Setting up your malware test environment</h3>
+  <div class="entry-content">
+    <p>Setting up your malware test environment correctly is very important. This is my 2 cents on the matter.</p>
 
-<p>My setup (which I&rsquo;m going to use here) is what I would consider basic, say in comparsion to Fireeye&rsquo;s lab or perhaps the People&rsquo;s Liberation Army lab.</p>
+    <p>There are 2 main options in my opinion: <br />
+      1) A basic, portable lab.<br />
+      2) Fully professional lab.</p>
 
-<p>Install a Windows 7 VM on a host. Personally I use VMWare. I find it solid.
-(Set the patch level of the machine to low).</p>
+    <p>The essential components:<br />
+      1) Easily restorable. Definitely.
+      2) Correct tools.<br />
+      3) Upgradable/Managable.<br />
+      4) Isolated!</p>
 
-<p>Ensure the VM is isolated BUT you can connect to the Web when needed. Point 3 - easily managable!</p>
+    <p>My setup (which I&rsquo;m going to use here) is what I would consider basic, say in comparsion to Fireeye&rsquo;s lab or perhaps the People&rsquo;s Liberation Army lab.</p>
 
-<h4>Tools</h4>
+    <p>Install a Windows 7 VM on a host. Personally I use VMWare. I find it solid.
+      (Set the patch level of the machine to low).</p>
 
-<p>System  <br/>
-•<a href="http://technet.microsoft.com/en-us/">Sysinternals Suite</a></p>
+    <p>Ensure the VM is isolated BUT you can connect to the Web when needed. Point 3 - easily managable!</p>
 
-<p>Networking/Investigations  <br/>
-•<a href="www.wireshark.org">Wireshark</a><br/>
-•<a href="http://winscp.net">WinScp</a><br/>
-•<a href="http://joncraton.org">Netcat</a><br/>
-•<a href="http://www.mcafee.com">Fport</a> <br/>
-•<a href="http://gnuwin32.sourceforge.net">Wget</a><br/>
-•<a href="http://www.chiark.greened.org.uk">Putty</a></p>
+    <h4>Tools</h4>
 
-<p>Anti-Rootkit<br/>
-•<a href="www.trendmicro.com">RootkitBuster</a></p>
+    <p>System <br />
+      •<a href="http://technet.microsoft.com/en-us/">Sysinternals Suite</a></p>
 
-<p>Static Analysis<br/>
-•<a href="http://md5deep.sourceforge.net">Md5deep</a> <br/>
-•<a href="htt://bob.droppages.com/Projects/PEiD">PeID</a> <br/>
-•<a href="http://smidgeonsoft.prohosting.com/pebrowse-pro-file-viewer.html">PE Browse</a><br/>
-•<a href="http://winitor.com">PE Studio</a></p>
+    <p>Networking/Investigations <br />
+      •<a href="www.wireshark.org">Wireshark</a><br />
+      •<a href="http://winscp.net">WinScp</a><br />
+      •<a href="http://joncraton.org">Netcat</a><br />
+      •<a href="http://www.mcafee.com">Fport</a> <br />
+      •<a href="http://gnuwin32.sourceforge.net">Wget</a><br />
+      •<a href="http://www.chiark.greened.org.uk">Putty</a></p>
 
-<p>Change Analysis<br/>
-•<a href="http://code.google.com/p/regshot">Regshot</a></p>
+    <p>Anti-Rootkit<br />
+      •<a href="www.trendmicro.com">RootkitBuster</a></p>
 
-<p>Web<br/>
-•<a href="http://getfirebug.com/">Firebug</a><br/>
-•<a href="http://noscript.net">NoScript</a></p>
+    <p>Static Analysis<br />
+      •<a href="http://md5deep.sourceforge.net">Md5deep</a> <br />
+      •<a href="htt://bob.droppages.com/Projects/PEiD">PeID</a> <br />
+      •<a href="http://smidgeonsoft.prohosting.com/pebrowse-pro-file-viewer.html">PE Browse</a><br />
+      •<a href="http://winitor.com">PE Studio</a></p>
 
-<p>Reverse Engineering Tools<br/>
-•<a href="http://www.hex-rays.com">IDA Pro</a><br/>
-•<a href="http://immunityinc.com">Ollydbg</a><br/>
-•<a href="http://www.hiew.ru">HiEW</a><br/>
-•<a href="https://code.google.com/p/volatility/">Volatility</a><br/>
-•Skill and patience! Comes with time.</p>
+    <p>Change Analysis<br />
+      •<a href="http://code.google.com/p/regshot">Regshot</a></p>
 
-<p>Take a snapshot when finished and you&rsquo;re golden. Next we&rsquo;ll discuss Static vs Dynamic Analysis. All good analysts should at a minimum be able to perform Static Analysis! Fullstop.</p>
-</div>
-<br>
+    <p>Web<br />
+      •<a href="http://getfirebug.com/">Firebug</a><br />
+      •<a href="http://noscript.net">NoScript</a></p>
 
+    <p>Reverse Engineering Tools<br />
+      •<a href="http://www.hex-rays.com">IDA Pro</a><br />
+      •<a href="http://immunityinc.com">Ollydbg</a><br />
+      •<a href="http://www.hiew.ru">HiEW</a><br />
+      •<a href="https://code.google.com/p/volatility/">Volatility</a><br />
+      •Skill and patience! Comes with time.</p>
 
-  <div class="entry-content"><p>PDF files - one of the most popular file formats!</p>
+    <p>Take a snapshot when finished and you&rsquo;re golden. Next we&rsquo;ll discuss Static vs Dynamic Analysis. All good analysts should at a minimum be able to perform Static Analysis! Fullstop.</p>
+  </div>
+  <br>
 
-<p>PDF stands for Portable Data Format. They contain all the graphics, fonts and text for a document, as well as the logic information to display them. The most common PDF reader is Adobe AcrobatReader.</p>
+  <h3>PDF file analysis</h3>
+  <div class="entry-content">
+    <p>PDF files - one of the most popular file formats!</p>
 
-<p>An interesting fact for you next pub outing - PDF readers are the second most popular software in the world. Can you guess what number one is? Attackers know that PDF reader software is installed on a potential victims machine. But they wouldn&rsquo;t try exploit this would they&hellip;.
-Attackers sending malicious PDF documents is common, very very common infact. So being in InfoSec you should at least know the basics, and not soley rely on your sandbox(s) x 10.</p>
+    <p>PDF stands for Portable Data Format. They contain all the graphics, fonts and text for a document, as well as the logic information to display them. The most common PDF reader is Adobe AcrobatReader.</p>
 
-<p>Exploits for PDFs are very popular - check out <a href="https://www.google.ie/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=6&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwi1jIeK5YLOAhVkCMAKHSV-D7cQFggyMAU&amp;url=http%3A%2F%2Fkrebsonsecurity.com%2Ftag%2Fcrimepack%2F&amp;usg=AFQjCNFsaRUryd1kQ1O59aN9O3e4gbMHuA">Crimepack</a></p>
+    <p>An interesting fact for you next pub outing - PDF readers are the second most popular software in the world. Can you guess what number one is? Attackers know that PDF reader software is installed on a potential victims machine. But they
+      wouldn&rsquo;t try exploit this would they&hellip;.
+      Attackers sending malicious PDF documents is common, very very common infact. So being in InfoSec you should at least know the basics, and not soley rely on your sandbox(s) x 10.</p>
 
-<p>A deeper look at the format can be found at <a href="http://blog.didierstevens.com/2008/04/09/quickpost-about-thephysical-and-logical-structure-of-pdf-files/">Didier Stevens Blog</a></p>
+    <p>Exploits for PDFs are very popular - check out <a
+        href="https://www.google.ie/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=6&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwi1jIeK5YLOAhVkCMAKHSV-D7cQFggyMAU&amp;url=http%3A%2F%2Fkrebsonsecurity.com%2Ftag%2Fcrimepack%2F&amp;usg=AFQjCNFsaRUryd1kQ1O59aN9O3e4gbMHuA">Crimepack</a>
+    </p>
 
-<p>For now lets get to work. We&rsquo;ll be using two tools PDF-ID and PDF-Parser. Both written by <a href="http://blog.didierstevens.com/programs/pdf-tools/">Didier Stevens</a></p>
+    <p>A deeper look at the format can be found at <a href="http://blog.didierstevens.com/2008/04/09/quickpost-about-thephysical-and-logical-structure-of-pdf-files/">Didier Stevens Blog</a></p>
 
-<p>PDF-ID is not a pdf parser. It will scan through a PDF looking for PDF keywords and shows you how many times they appear in a file - helps to intially triage PDF documents.</p>
+    <p>For now lets get to work. We&rsquo;ll be using two tools PDF-ID and PDF-Parser. Both written by <a href="http://blog.didierstevens.com/programs/pdf-tools/">Didier Stevens</a></p>
 
-<p>PDF-PARSER tool allows you to parse the physical and logical structure of a PDF file.</p>
+    <p>PDF-ID is not a pdf parser. It will scan through a PDF looking for PDF keywords and shows you how many times they appear in a file - helps to intially triage PDF documents.</p>
 
-<p>EX1) Analysis of PDF2.pdf - a PDF with Hello World.</p>
+    <p>PDF-PARSER tool allows you to parse the physical and logical structure of a PDF file.</p>
 
-<p>Results of running PDF-ID on PDF2.pdf.
-<img src="/images/posts/pdfid1.png" width="150" height="150" title="PDFIF" ></p>
+    <p>EX1) Analysis of PDF2.pdf - a PDF with Hello World.</p>
 
-<p>PDF-ID dentified it is a PDF from the header. 6 Object files are present in the file. Most PDF files will contain some binary data but this one has been designed to be pure ASCII. As you can see the code is easy to read and it describes a series of objects.</p>
+    <p>Results of running PDF-ID on PDF2.pdf.
+      <img src="/images/posts/pdfid1.png" width="150" height="150" title="PDFIF">
+    </p>
 
-<p>Going further with PDF-Parser.
-Results of running PDF-parser on PDF2.pdf.
-<img src="/images/posts/pdfparser1.png" width="150" height="150" title="PDFparser" ></p>
+    <p>PDF-ID dentified it is a PDF from the header. 6 Object files are present in the file. Most PDF files will contain some binary data but this one has been designed to be pure ASCII. As you can see the code is easy to read and it describes a
+      series of objects.</p>
 
-<p>To parse out individual objects in PDF files we run the following command:</p>
+    <p>Going further with PDF-Parser.
+      Results of running PDF-parser on PDF2.pdf.
+      <img src="/images/posts/pdfparser1.png" width="150" height="150" title="PDFparser">
+    </p>
 
-<p>-o 5 to specify object 5.</p>
+    <p>To parse out individual objects in PDF files we run the following command:</p>
 
-<p>-c forces to show the contents</p>
+    <p>-o 5 to specify object 5.</p>
 
-<p>And now it only takes the stream I want.</p>
+    <p>-c forces to show the contents</p>
 
-<p><img src="/images/posts/pdfparser1.1.png" width="150" height="150" title="PDFparser1.1" ></p>
+    <p>And now it only takes the stream I want.</p>
 
-<p>But we get back binary data, rather than simple ASCII which we would expect right? This is because of this filter - FlateDecode. The filter is compressing the text using zlib compression, which is very common in normal PDF files. Reduce size PDF = Faster to download.</p>
+    <p><img src="/images/posts/pdfparser1.1.png" width="150" height="150" title="PDFparser1.1"></p>
 
-<p>Luckily PDF-PARSER has a flag to deal with this. Decoded compression.</p>
+    <p>But we get back binary data, rather than simple ASCII which we would expect right? This is because of this filter - FlateDecode. The filter is compressing the text using zlib compression, which is very common in normal PDF files. Reduce size
+      PDF = Faster to download.</p>
 
-<p><img src="/images/posts/pdfparser1.2.png" width="150" height="150" title="PDFparser1.2" ></p>
+    <p>Luckily PDF-PARSER has a flag to deal with this. Decoded compression.</p>
 
-<p>EX2) Analysis of java.pdf.
-PDFID output.
-<img src="/images/posts/java.png" width="150" height="150" title="Java" ></p>
+    <p><img src="/images/posts/pdfparser1.2.png" width="150" height="150" title="PDFparser1.2"></p>
 
-<p>Same as previous, still one page etc. However there is Javascript present. A user opening this PDF normally will not notice as you will see.</p>
+    <p>EX2) Analysis of java.pdf.
+      PDFID output.
+      <img src="/images/posts/java.png" width="150" height="150" title="Java">
+    </p>
 
-<p>Using the -s flag of PDF parser to figure out which object it is in.</p>
+    <p>Same as previous, still one page etc. However there is Javascript present. A user opening this PDF normally will not notice as you will see.</p>
 
-<p><img src="/images/posts/java2.png" width="150" height="150" title="java2" ></p>
+    <p>Using the -s flag of PDF parser to figure out which object it is in.</p>
 
-<p>Javascript appears in Object 7. Search feature in PDF-PARSER is NOT case sensitive. /JS shows the actual JavaScript to run. The JS will use the app class which references the PDF document itself. It calls the alert method with some parameters. The title and the message parameters are set as well as the objects to use.</p>
+    <p><img src="/images/posts/java2.png" width="150" height="150" title="java2"></p>
 
-<p>As mentioned - if you open this the JavaScript it does not run. JavaScript is an event based language, something needs to trigger the JS to run. There is nothing in the PDF to &lsquo;tell&rsquo; it to run. Such as an OpenAction method.</p>
+    <p>Javascript appears in Object 7. Search feature in PDF-PARSER is NOT case sensitive. /JS shows the actual JavaScript to run. The JS will use the app class which references the PDF document itself. It calls the alert method with some parameters.
+      The title and the message parameters are set as well as the objects to use.</p>
 
-<p>EX3) Another example involving a PE file.
-PDF-ID output.</p>
+    <p>As mentioned - if you open this the JavaScript it does not run. JavaScript is an event based language, something needs to trigger the JS to run. There is nothing in the PDF to &lsquo;tell&rsquo; it to run. Such as an OpenAction method.</p>
 
-<p><img src="/images/posts/exe.png" width="150" height="150" title="exe" ></p>
+    <p>EX3) Another example involving a PE file.
+      PDF-ID output.</p>
 
-<p>We have an embedded file 1 - i.e. a file embedded in the PDF. That embedded file is essentially added as an attachment. Searching for this reveals it is in Object 8.</p>
+    <p><img src="/images/posts/exe.png" width="150" height="150" title="exe"></p>
 
-<p><img src="/images/posts/exe3.png" width="150" height="150" title="exe3" ></p>
+    <p>We have an embedded file 1 - i.e. a file embedded in the PDF. That embedded file is essentially added as an attachment. Searching for this reveals it is in Object 8.</p>
 
-<p>Using -d to dump the file.</p>
+    <p><img src="/images/posts/exe3.png" width="150" height="150" title="exe3"></p>
 
-<p><img src="/images/posts/exe4.png" width="150" height="150" title="exe4" ></p>
+    <p>Using -d to dump the file.</p>
 
-<p><img src="/images/posts/exe5.png" width="150" height="150" title="exe5" ></p>
+    <p><img src="/images/posts/exe4.png" width="150" height="150" title="exe4"></p>
 
-<p>We can straight up run/sandbox at this stage. Or reverse if you know how. We&rsquo;ll be covering this later.</p>
+    <p><img src="/images/posts/exe5.png" width="150" height="150" title="exe5"></p>
 
-<p>Hope this was informative :).</p>
+    <p>We can straight up run/sandbox at this stage. Or reverse if you know how. We&rsquo;ll be covering this later.</p>
 
-<p>When time allows I&rsquo;ll post another analysis focusing on things like heap spray attacks and obfuscation.</p>
+    <p>Hope this was informative :).</p>
 
-<p>Check out <a href="http://www.joesecurity.org/joe-sandbox-complete">Joe Sandbox</a> and <a href="http://eternal-todo.com/tools/peepdf-pdf-analysis-tool">peepdf</a></p>
+    <p>When time allows I&rsquo;ll post another analysis focusing on things like heap spray attacks and obfuscation.</p>
 
-<p>Edit: Joe&rsquo;s Sandbox used to be free!</p>
-</div>
-  </body>
+    <p>Check out <a href="http://www.joesecurity.org/joe-sandbox-complete">Joe Sandbox</a> and <a href="http://eternal-todo.com/tools/peepdf-pdf-analysis-tool">peepdf</a></p>
+
+    <p>Edit: Joe&rsquo;s Sandbox used to be free!</p>
+  </div>
+</body>
+
 </html>
